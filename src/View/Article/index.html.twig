@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Articles</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <p><a href="/articles/show?id={{ article.id }}">{{ article.title }}</a></p>
+                <p>Catégorie : {{ article.category_name }}</p>
+                <p>Créé le : {{ article.updated_at | date("d/m/Y") }}</p>
+                <p>Mis à jour le : {{ article.updated_at | date("d/m/Y") }}</p>
+            </li>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

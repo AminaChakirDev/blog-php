@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+  <h1>Formulaire de connexion</h1>
+  <form action='' method='POST'>
+    <!-- Grid -->
+    <div class="grid">
+
+      <!-- Markup example 1: input is inside label -->
+      <label for="email">
+        Email
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </label>
+
+      <label for="password">
+        Mot de passe
+        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+      </label>
+
+    </div>
+    {% if error %}
+      <small>{{error}}</small>
+    {% endif %}
+    <!-- Button -->
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Edit article {{ article.title }}</h1>
+    {% include 'Admin/Article/_form.html.twig' %}
+    <form action="/admin/articles/delete" method="POST">
+        <input type="hidden" name="id" value="{{ article.id }}">
+        <button><i class="fa-solid fa-trash"></i></button>
+    </form>
+    <a href="/admin/articles">Back</a>
+{% endblock %}
