@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,14 +7,30 @@
     <link rel="icon" href="/assets/images/favicon.png">
 
     <title>{% block title %}{% endblock %}</title>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://kit.fontawesome.com/b0fe03b679.js" crossorigin="anonymous"></script>
     {% block stylesheet %}{% endblock %}
 </head>
 
 <body>
-    {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
+    <main class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><strong>Blog PHP</strong></li>
+                </ul>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/articles">Articles</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/login"><i class="fa-regular fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        {% block content %}{% endblock %}
+        {% block javascript %}{% endblock %}
+    </main>
 </body>
 </html>
 
